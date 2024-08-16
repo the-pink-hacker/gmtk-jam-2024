@@ -11,14 +11,30 @@ public partial class Wallet : Node
     public override void _Ready()
     {
         Instance = this;
+        this.Money = 100;
         GameLoop.Instance.GameUpdate += OnGameUpdate;
     }
 
     public void OnGameUpdate()
     {
-        if (UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads))
+        if (UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads) >= 1)
         {
             this.Money += UserManager.Instance.Users;
+        }
+    }
+    
+    public bool TakeMoney(int amount)
+    {
+        int newMoney = this.Money - amount;
+        
+        if (newMoney <= 0)
+        {
+            return false;
+        }
+        else
+        {
+            this.Money = newMoney;
+            return true;
         }
     }
 }

@@ -3,5 +3,10 @@ using System;
 
 public enum Upgrade
 {
-    Ads
+    Ads,
+    Donations,
+    Products,
+    DDoSProtection,
+    Servers,
+    Promotions,
 }

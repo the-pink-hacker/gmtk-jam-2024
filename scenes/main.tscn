@@ -31,3 +31,5 @@ script = SubResource("CSharpScript_6rtns")
 
 [node name="StoreBuyButton" parent="Store" instance=ExtResource("2_7gqyv")]
 text = "Buy Ads"
+Cost = 10
+MaxUpgrades = 10
