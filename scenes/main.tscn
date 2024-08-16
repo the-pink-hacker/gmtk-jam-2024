@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://l3n1gpr5nx4a"]
+[gd_scene load_steps=4 format=3 uid="uid://l3n1gpr5nx4a"]
 
 [ext_resource type="PackedScene" uid="uid://bwav1k0natynn" path="res://scenes/ui/hud.tscn" id="1_ivxl1"]
+[ext_resource type="PackedScene" uid="uid://dn7e1ujpvjlyx" path="res://scenes/ui/store_buy_button.tscn" id="2_7gqyv"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_6rtns"]
 script/source = "using Godot;
@@ -25,3 +26,8 @@ public partial class Test : Node2D
 script = SubResource("CSharpScript_6rtns")
 
 [node name="HUD" parent="." instance=ExtResource("1_ivxl1")]
+
+[node name="Store" type="Node" parent="."]
+
+[node name="StoreBuyButton" parent="Store" instance=ExtResource("2_7gqyv")]
+text = "Buy Ads"

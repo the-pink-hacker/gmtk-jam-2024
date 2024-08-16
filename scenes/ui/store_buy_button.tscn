@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn7e1ujpvjlyx"]
+
+[ext_resource type="Script" path="res://scripts/StoreBuyButton.cs" id="1_40v6l"]
+
+[node name="StoreBuyButton" type="MenuButton"]
+offset_left = 603.0
+offset_top = 163.0
+offset_right = 682.0
+offset_bottom = 204.0
+toggle_mode = false
+text = "Buy"
+script = ExtResource("1_40v6l")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
