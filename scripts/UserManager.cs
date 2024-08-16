@@ -10,9 +10,10 @@ public partial class UserManager : Node
     public override void _Ready()
     {
         Instance = this;
+        GameLoop.Instance.GameUpdate += OnGameUpdate;
     }
-
-    public override void _Process(double delta)
+    
+    private void OnGameUpdate()
     {
         this.Users += 1;
     }

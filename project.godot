@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GameLoop="*res://scripts/GameLoop.cs"
 Wallet="*res://scripts/Wallet.cs"
 UserManager="*res://scripts/UserManager.cs"
 UpgradeManager="*res://scripts/UpgradeManager.cs"

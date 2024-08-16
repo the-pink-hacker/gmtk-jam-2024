@@ -11,13 +11,14 @@ public partial class Wallet : Node
     public override void _Ready()
     {
         Instance = this;
+        GameLoop.Instance.GameUpdate += OnGameUpdate;
     }
 
-    public override void _Process(double delta)
+    public void OnGameUpdate()
     {
         if (UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads))
         {
-            this.Money += 1;
+            this.Money += UserManager.Instance.Users;
         }
     }
 }

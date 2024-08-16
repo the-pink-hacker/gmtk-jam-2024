@@ -8,9 +8,10 @@ public partial class Hud : Node
 
     public override void _Ready()
     {
+        GameLoop.Instance.GameUpdate += OnGameUpdate;
     }
 
-    public override void _Process(double delta)
+    public void OnGameUpdate()
     {
         int money = Wallet.Instance.Money;
         int users = UserManager.Instance.Users;
