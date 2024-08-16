@@ -6,7 +6,7 @@ public partial class Wallet : Node
     public static Wallet Instance { get; private set; }
 
     [Export]
-    public int Money { get; set; }
+    public long Money { get; set; }
 
     public override void _Ready()
     {
@@ -19,13 +19,13 @@ public partial class Wallet : Node
     {
         if (UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads) >= 1)
         {
-            this.Money += UserManager.Instance.Users;
+            this.Money += (long)UserManager.Instance.Users;
         }
     }
     
-    public bool TakeMoney(int amount)
+    public bool TakeMoney(ulong amount)
     {
-        int newMoney = this.Money - amount;
+        long newMoney = this.Money - (long)amount;
         
         if (newMoney <= 0)
         {

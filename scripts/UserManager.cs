@@ -5,7 +5,7 @@ public partial class UserManager : Node
 {
     public static UserManager Instance { get; private set; }
 
-    public int Users { get; set; }
+    public ulong Users { get; set; }
 
     public override void _Ready()
     {

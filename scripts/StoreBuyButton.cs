@@ -7,14 +7,14 @@ public partial class StoreBuyButton : MenuButton
     public Upgrade Upgrade { get; private set; }
     
     [Export]
-    public int Cost { get; private set; }
+    public ulong Cost { get; private set; }
     
     [Export]
-    public int MaxUpgrades { get; private set; }
+    public uint MaxUpgrades { get; private set; }
     
     public void _on_pressed()
     {
-        int amount = UpgradeManager.Instance.CheckUpgrade(this.Upgrade);
+        uint amount = UpgradeManager.Instance.CheckUpgrade(this.Upgrade);
 
         if (amount < MaxUpgrades && Wallet.Instance.TakeMoney(this.Cost))
         {

@@ -11,6 +11,7 @@ public partial class GameLoop : Node
     public async override void _Ready()
     {
         Instance = this;
+        GD.Randomize();
 
         while (true)
         {
