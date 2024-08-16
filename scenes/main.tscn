@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://l3n1gpr5nx4a"]
+
+[ext_resource type="PackedScene" uid="uid://bwav1k0natynn" path="res://scenes/ui/hud.tscn" id="1_ivxl1"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_6rtns"]
+script/source = "using Godot;
+using System;
+
+public partial class Test : Node2D
+{
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
+    }
+
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
+    {
+        GD.Print(\"Hello world\");
+    }
+}
+"
+
+[node name="Main" type="Node2D"]
+script = SubResource("CSharpScript_6rtns")
+
+[node name="HUD" parent="." instance=ExtResource("1_ivxl1")]

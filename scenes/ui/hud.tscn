@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwav1k0natynn"]
+
+[ext_resource type="Script" path="res://scripts/Hud.cs" id="1_h0fuv"]
+
+[node name="HUD" type="Node" node_paths=PackedStringArray("TextNode")]
+script = ExtResource("1_h0fuv")
+TextNode = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 295.0
+offset_bottom = 107.0
+text = "Money: $0
+Users: 0"
