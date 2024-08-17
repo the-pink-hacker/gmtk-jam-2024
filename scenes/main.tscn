@@ -13,7 +13,6 @@
 text = "upgrade.ads.0"
 Cost = 10
 MaxUpgrades = 4
-TranslationKey = "upgrade.ads"
 
 [node name="StoreBuyButton2" parent="Store" instance=ExtResource("2_7gqyv")]
 offset_left = 602.0
@@ -24,23 +23,12 @@ text = "upgrade.server.0"
 Upgrade = 3
 Cost = 100
 MaxUpgrades = 10
-TranslationKey = "upgrade.server"
 
 [node name="StoreBuyButton3" parent="Store" instance=ExtResource("2_7gqyv")]
-offset_left = 601.0
-offset_top = 256.0
-offset_right = 680.0
-offset_bottom = 297.0
-text = "upgrade.ddos.0"
-Upgrade = 2
-Cost = 10
-MaxUpgrades = 10
-TranslationKey = "upgrade.ddos"
-
-[node name="StoreBuyButton4" parent="Store" instance=ExtResource("2_7gqyv")]
-offset_top = 320.0
-offset_bottom = 361.0
-text = "upgrade.donation.0"
-Upgrade = 1
-Cost = 10
-TranslationKey = "upgrade.donation"
+offset_left = 613.0
+offset_top = 273.0
+offset_right = 731.0
+offset_bottom = 314.0
+text = "upgrade.developer.0"
+Upgrade = 4
+MaxUpgrades = 9

@@ -7,7 +7,7 @@ public partial class UpgradeManager : Node
     public static UpgradeManager Instance { get; private set; }
 
     private Dictionary<Upgrade, uint> Upgrades = new Dictionary<Upgrade, uint>();
-    private Upgrade CurrentlyDeveloping = (Upgrade)0;
+    public Upgrade CurrentlyDeveloping { get; private set; } = (Upgrade)0;
     public double DevelopmentTime { get; private set; } = 0.0;
     public SceneTreeTimer DevelopmentTimer { get; private set; } = null;
 
@@ -30,8 +30,9 @@ public partial class UpgradeManager : Node
     public async void DevelopeUpgrade(Upgrade upgrade, double time)
     {
         this.CurrentlyDeveloping = upgrade;
-        this.DevelopmentTime = time;
-        this.DevelopmentTimer = GetTree().CreateTimer(time);
+        uint developers = this.CheckUpgrade(Upgrade.Developer);
+        this.DevelopmentTime = time / (developers + 1.0);
+        this.DevelopmentTimer = GetTree().CreateTimer(this.DevelopmentTime);
         await ToSignal(this.DevelopmentTimer, SceneTreeTimer.SignalName.Timeout);
         this.GrantUpgrade(upgrade);
         this.DevelopmentTimer = null;

@@ -15,9 +15,6 @@ public partial class StoreBuyButton : MenuButton
     [Export]
     public uint MaxUpgrades { get; private set; }
     
-    [Export]
-    public string TranslationKey { get; private set; }
-    
     public override void _Ready()
     {
         this.SetLabel(0);
@@ -45,7 +42,7 @@ public partial class StoreBuyButton : MenuButton
     
     private void SetLabel(uint amount)
     {
-        string key = $"{this.TranslationKey}.{amount}";
+        string key = $"{this.Upgrade.ToTranslationKey()}.{amount}";
         this.SetText(key);
     }
     

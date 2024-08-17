@@ -12,6 +12,5 @@ text = "Buy"
 script = ExtResource("1_40v6l")
 Time = 10.0
 MaxUpgrades = 1
-TranslationKey = "upgrade"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

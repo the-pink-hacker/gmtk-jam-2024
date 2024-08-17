@@ -1,4 +1,5 @@
 keys,us_en
+null,INVALID
 upgrade.full,Fully Upgraded
 upgrade.ads,Ads
 upgrade.ads.0,Banner Ads
@@ -12,3 +13,13 @@ upgrade.server.2,Old Laptop
 upgrade.server.3,Raspberry Pi Cluster
 upgrade.server.4,Small Server Rack
 upgrade.server.5,AMD Ryzen Epic
+upgrade.developer,Web Developers
+upgrade.developer.0,Intern
+upgrade.developer.1,Fleet of Interns
+upgrade.developer.2,Junior Javascript Dev
+upgrade.developer.3,Senior Javascript Dev
+upgrade.developer.4,Fleet of Javascript Devs
+upgrade.developer.5,Junior Fullstack Dev
+upgrade.developer.6,Senior Fullstack Dev
+upgrade.developer.7,Fleet of Fullstack Devs
+upgrade.developer.8,Open Sourcing
