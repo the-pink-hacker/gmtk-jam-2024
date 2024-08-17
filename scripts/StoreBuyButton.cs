@@ -10,6 +10,9 @@ public partial class StoreBuyButton : MenuButton
     public ulong Cost { get; private set; }
     
     [Export]
+    public double Time { get; private set; }
+    
+    [Export]
     public uint MaxUpgrades { get; private set; }
     
     [Export]
@@ -22,11 +25,12 @@ public partial class StoreBuyButton : MenuButton
     
     public void _on_pressed()
     {
+        if (UpgradeManager.Instance.IsCurrentlyDeveloping()) return;
         uint amount = UpgradeManager.Instance.CheckUpgrade(this.Upgrade);
 
         if (amount < MaxUpgrades && Wallet.Instance.TakeMoney(this.Cost))
         {
-            UpgradeManager.Instance.GrantUpgrade(this.Upgrade);
+            UpgradeManager.Instance.DevelopeUpgrade(this.Upgrade, this.Time);
 
             if (amount + 1 >= MaxUpgrades)
             {

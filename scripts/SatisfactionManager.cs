@@ -30,7 +30,6 @@ public partial class SatisfactionManager : Node
         }
         
         bonus -= ads * 0.05f;
-        GD.Print(ads);
         this.Satisfaction = Math.Clamp(1.0f + bonus, 0.0f, 1.0f);
     }
 }

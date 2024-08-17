@@ -20,6 +20,14 @@ public partial class Hud : Node
         
         text += $"\nUsers: {users}\nIntegrity: {integrity}%\nSatisfaction: {satisfaction}%";
         
+        if (UpgradeManager.Instance.IsCurrentlyDeveloping())
+        {
+            double waitTime = UpgradeManager.Instance.DevelopmentTime;
+            double timeLeft = UpgradeManager.Instance.DevelopmentTimer.TimeLeft;
+            double roundedPercent = RoundDecimalPlaces((timeLeft / waitTime) * 100.0, 2);
+            text += $"\nDevelopment: {roundedPercent}%";
+        }
+        
         Dictionary<Event, SceneTreeTimer> currentEvents = EventManager.Instance.CurrentEvents;
         
         if (currentEvents.Count > 0)
