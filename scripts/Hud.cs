@@ -44,18 +44,18 @@ public partial class Hud : Node
         this.TextNode.SetText(text);
     }
     
-    private string PercentToString(double percent)
+    private static string PercentToString(double percent)
     {
         return $"{percent * 100.0,6:F2}%";
     }
     
-    private string SecondsLeftToText(double time)
+    private static string SecondsLeftToText(double time)
     {
         double roundedTime = RoundDecimalPlaces(time, 1);
         return $"{roundedTime} seconds";
     }
     
-    private double RoundDecimalPlaces(double value, uint places)
+    private static double RoundDecimalPlaces(double value, uint places)
     {
         double factor = Math.Pow(10, places);
         return Math.Round(value * factor) / factor;

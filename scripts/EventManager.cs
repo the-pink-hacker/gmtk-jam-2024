@@ -16,12 +16,25 @@ public partial class EventManager : Node
     
     private void OnGameUpdate()
     {
-        int randomNumber = RandomNumber(1000);
-        
-        if (randomNumber == 0) {
+        if (RandomBool(1000)) {
             GD.Print("DDoS");
             this.CreateEvent(Event.DDoS, 10.0f);
         }
+        
+        uint adLevel = UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads);
+        
+        if (adLevel > 1 && RandomBool(10))
+        {
+            GD.Print("Ad");
+            PackedScene adScene = GD.Load<PackedScene>("res://scenes/ui/popup_ad.tscn");
+            Node root = GetTree().GetRoot();
+            root.AddChild(adScene.Instantiate());
+        }
+    }
+    
+    private static bool RandomBool(int chance)
+    {
+        return RandomNumber(chance) == 0;
     }
     
     private static int RandomNumber(int restrict)
