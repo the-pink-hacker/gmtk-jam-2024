@@ -28,3 +28,9 @@ SatisfactionManager="*res://scripts/SatisfactionManager.cs"
 [dotnet]
 
 project/assembly_name="GMTK Jam 2024"
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://lang/texts.us.translation")
+locale/test="us_en"
+locale/fallback="us_en"

@@ -10,34 +10,37 @@
 [node name="Store" type="Node" parent="."]
 
 [node name="StoreBuyButton" parent="Store" instance=ExtResource("2_7gqyv")]
-text = "Banner Ads"
+text = "upgrade.ads.0"
 Cost = 10
-MaxUpgrades = 2
+MaxUpgrades = 4
+TranslationKey = "upgrade.ads"
 
 [node name="StoreBuyButton2" parent="Store" instance=ExtResource("2_7gqyv")]
 offset_left = 602.0
 offset_top = 206.0
 offset_right = 681.0
 offset_bottom = 247.0
-text = "Servers"
+text = "upgrade.server.0"
 Upgrade = 3
 Cost = 100
 MaxUpgrades = 10
+TranslationKey = "upgrade.server"
 
 [node name="StoreBuyButton3" parent="Store" instance=ExtResource("2_7gqyv")]
 offset_left = 601.0
 offset_top = 256.0
 offset_right = 680.0
 offset_bottom = 297.0
-text = "DDoS Protection"
+text = "upgrade.ddos.0"
 Upgrade = 2
 Cost = 10
 MaxUpgrades = 10
+TranslationKey = "upgrade.ddos"
 
 [node name="StoreBuyButton4" parent="Store" instance=ExtResource("2_7gqyv")]
 offset_top = 320.0
 offset_bottom = 361.0
-text = "Donation Box"
+text = "upgrade.donation.0"
 Upgrade = 1
 Cost = 10
-MaxUpgrades = 1
+TranslationKey = "upgrade.donation"

@@ -10,5 +10,7 @@ offset_bottom = 204.0
 toggle_mode = false
 text = "Buy"
 script = ExtResource("1_40v6l")
+MaxUpgrades = 1
+TranslationKey = "upgrade"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

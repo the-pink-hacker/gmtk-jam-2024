@@ -12,6 +12,14 @@ public partial class StoreBuyButton : MenuButton
     [Export]
     public uint MaxUpgrades { get; private set; }
     
+    [Export]
+    public string TranslationKey { get; private set; }
+    
+    public override void _Ready()
+    {
+        this.SetLabel(0);
+    }
+    
     public void _on_pressed()
     {
         uint amount = UpgradeManager.Instance.CheckUpgrade(this.Upgrade);
@@ -22,8 +30,25 @@ public partial class StoreBuyButton : MenuButton
 
             if (amount + 1 >= MaxUpgrades)
             {
-                this.SetDisabled(true);
+                this.FullyUpgraded();
+            }
+            else
+            {
+                this.SetLabel(amount + 1);
             }
         }
+    }
+    
+    private void SetLabel(uint amount)
+    {
+        string key = $"{this.TranslationKey}.{amount}";
+        this.SetText(key);
+    }
+    
+    private void FullyUpgraded()
+    {
+        this.SetDisabled(true);
+        string key = "upgrade.full";
+        this.SetText(key);
     }
 }
