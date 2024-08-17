@@ -9,12 +9,16 @@ public partial class Hud : Node
 
     public override void _Process(double delta)
     {
-        long money = Wallet.Instance.Money;
+        double money = Wallet.Instance.Money;
         ulong users = UserManager.Instance.Users;
         float integrity = IntegrityManager.Instance.Integrity * 100.0f;
         float satisfaction = SatisfactionManager.Instance.Satisfaction * 100.0f;
         
-        string text = $"Money: ${money}\nUsers: {users}\nIntegrity: {integrity}%\nSatisfaction: {satisfaction}%";
+        string text = "";
+        
+        text += $"Money: ${RoundDecimalPlaces(money, 2)}";
+        
+        text += $"\nUsers: {users}\nIntegrity: {integrity}%\nSatisfaction: {satisfaction}%";
         
         Dictionary<Event, SceneTreeTimer> currentEvents = EventManager.Instance.CurrentEvents;
         
@@ -34,8 +38,13 @@ public partial class Hud : Node
     
     private String SecondsLeftToText(double time)
     {
-        int decimalFactor = 10;
-        double roundedTime = Math.Round(time * decimalFactor) / decimalFactor;
+        double roundedTime = RoundDecimalPlaces(time, 1);
         return $"{roundedTime} seconds";
+    }
+    
+    private double RoundDecimalPlaces(double value, uint places)
+    {
+        double factor = Math.Pow(10, places);
+        return Math.Round(value * factor) / factor;
     }
 }

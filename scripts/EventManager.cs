@@ -14,9 +14,9 @@ public partial class EventManager : Node
         GameLoop.Instance.GameUpdate += OnGameUpdate;
     }
     
-    public void OnGameUpdate()
+    private void OnGameUpdate()
     {
-        int randomNumber = RandomNumber(10);
+        int randomNumber = RandomNumber(1000);
         
         if (randomNumber == 0) {
             GD.Print("DDoS");
@@ -39,5 +39,10 @@ public partial class EventManager : Node
         // Wait for timer to end
         await ToSignal(timer, SceneTreeTimer.SignalName.Timeout);
         this.CurrentEvents.Remove(selectedEvent);
+    }
+    
+    public bool IsEventActive(Event selectedEvent)
+    {
+        return this.CurrentEvents.ContainsKey(selectedEvent);
     }
 }

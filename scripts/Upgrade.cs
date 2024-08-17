@@ -5,8 +5,6 @@ public enum Upgrade
 {
     Ads,
     Donations,
-    Products,
     DDoSProtection,
     Servers,
-    Promotions,
 }

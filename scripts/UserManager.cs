@@ -5,7 +5,7 @@ public partial class UserManager : Node
 {
     public static UserManager Instance { get; private set; }
 
-    public ulong Users { get; set; }
+    public ulong Users;
 
     public override void _Ready()
     {
@@ -15,6 +15,18 @@ public partial class UserManager : Node
     
     private void OnGameUpdate()
     {
-        this.Users += 1;
+        float satisfaction = SatisfactionManager.Instance.Satisfaction;
+        long userChange = 0;
+        
+        if (satisfaction >= 0.80f)
+        {
+            userChange++;
+        }
+        else
+        {
+            userChange--;
+        }
+        
+        this.Users = (ulong)Math.Max((long)this.Users + userChange, 0);
     }
 }
