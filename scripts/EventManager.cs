@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public partial class EventManager : Node
 {
     public static EventManager Instance { get; private set; }
+    
+    private static PackedScene AdScene = GD.Load<PackedScene>("res://scenes/ui/popup_ad.tscn");
 
     public Dictionary<Event, SceneTreeTimer> CurrentEvents = new Dictionary<Event, SceneTreeTimer>();
 
@@ -26,9 +28,8 @@ public partial class EventManager : Node
         if (adLevel > 1 && RandomBool(10))
         {
             GD.Print("Ad");
-            PackedScene adScene = GD.Load<PackedScene>("res://scenes/ui/popup_ad.tscn");
             Node root = GetTree().GetRoot();
-            root.AddChild(adScene.Instantiate());
+            root.AddChild(AdScene.Instantiate());
         }
     }
     

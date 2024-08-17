@@ -5,16 +5,34 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="HUD" parent="." instance=ExtResource("1_ivxl1")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
-[node name="Store" type="Node" parent="."]
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
 
-[node name="StoreBuyButton" parent="Store" instance=ExtResource("2_7gqyv")]
+[node name="Home" type="Control" parent="CanvasLayer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="HUD" parent="CanvasLayer/TabContainer/Home" instance=ExtResource("1_ivxl1")]
+
+[node name="Store" type="Control" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="StoreBuyButton" parent="CanvasLayer/TabContainer/Store" instance=ExtResource("2_7gqyv")]
 text = "upgrade.ads.0"
 Cost = 10
 MaxUpgrades = 4
 
-[node name="StoreBuyButton2" parent="Store" instance=ExtResource("2_7gqyv")]
+[node name="StoreBuyButton2" parent="CanvasLayer/TabContainer/Store" instance=ExtResource("2_7gqyv")]
 offset_left = 602.0
 offset_top = 206.0
 offset_right = 681.0
@@ -24,7 +42,7 @@ Upgrade = 3
 Cost = 10
 MaxUpgrades = 10
 
-[node name="StoreBuyButton3" parent="Store" instance=ExtResource("2_7gqyv")]
+[node name="StoreBuyButton3" parent="CanvasLayer/TabContainer/Store" instance=ExtResource("2_7gqyv")]
 offset_left = 613.0
 offset_top = 273.0
 offset_right = 731.0

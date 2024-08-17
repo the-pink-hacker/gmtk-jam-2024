@@ -25,6 +25,11 @@ UpgradeManager="*res://scripts/UpgradeManager.cs"
 IntegrityManager="*res://scripts/IntegrityManager.cs"
 SatisfactionManager="*res://scripts/SatisfactionManager.cs"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [dotnet]
 
 project/assembly_name="GMTK Jam 2024"

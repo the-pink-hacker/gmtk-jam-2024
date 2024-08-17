@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Hud.cs" id="1_h0fuv"]
 
-[node name="HUD" type="Node" node_paths=PackedStringArray("TextNode")]
+[node name="HUD" type="Node2D" node_paths=PackedStringArray("TextNode")]
 script = ExtResource("1_h0fuv")
 TextNode = NodePath("RichTextLabel")
 
