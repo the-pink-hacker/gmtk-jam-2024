@@ -11,21 +11,21 @@ public partial class Hud : Node
     {
         double money = Wallet.Instance.Money;
         ulong users = UserManager.Instance.Users;
-        float integrity = IntegrityManager.Instance.Integrity * 100.0f;
-        float satisfaction = SatisfactionManager.Instance.Satisfaction * 100.0f;
+        float integrity = IntegrityManager.Instance.Integrity;
+        float satisfaction = SatisfactionManager.Instance.Satisfaction;
         
         string text = "";
         
         text += $"Money: ${RoundDecimalPlaces(money, 2)}";
         
-        text += $"\nUsers: {users}\nIntegrity: {integrity}%\nSatisfaction: {satisfaction}%";
+        text += $"\nUsers: {users}\nIntegrity: {PercentToString(integrity)}\nSatisfaction: {PercentToString(satisfaction)}";
         
         if (UpgradeManager.Instance.IsCurrentlyDeveloping())
         {
             double waitTime = UpgradeManager.Instance.DevelopmentTime;
             double timeLeft = UpgradeManager.Instance.DevelopmentTimer.TimeLeft;
-            double roundedPercent = RoundDecimalPlaces((timeLeft / waitTime) * 100.0, 2);
-            text += $"\nDevelopment: {roundedPercent}%";
+            string roundedPercent = PercentToString(1.0 - (timeLeft / waitTime));
+            text += $"\nDevelopment: {roundedPercent}";
         }
         
         Dictionary<Event, SceneTreeTimer> currentEvents = EventManager.Instance.CurrentEvents;
@@ -44,7 +44,12 @@ public partial class Hud : Node
         this.TextNode.SetText(text);
     }
     
-    private String SecondsLeftToText(double time)
+    private string PercentToString(double percent)
+    {
+        return $"{percent * 100.0,6:F2}%";
+    }
+    
+    private string SecondsLeftToText(double time)
     {
         double roundedTime = RoundDecimalPlaces(time, 1);
         return $"{roundedTime} seconds";

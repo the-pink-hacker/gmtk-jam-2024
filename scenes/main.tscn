@@ -21,7 +21,7 @@ offset_right = 681.0
 offset_bottom = 247.0
 text = "upgrade.server.0"
 Upgrade = 3
-Cost = 100
+Cost = 10
 MaxUpgrades = 10
 
 [node name="StoreBuyButton3" parent="Store" instance=ExtResource("2_7gqyv")]
@@ -31,4 +31,5 @@ offset_right = 731.0
 offset_bottom = 314.0
 text = "upgrade.developer.0"
 Upgrade = 4
+Cost = 50
 MaxUpgrades = 9
