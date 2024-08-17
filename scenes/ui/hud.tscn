@@ -7,7 +7,7 @@ script = ExtResource("1_h0fuv")
 TextNode = NodePath("RichTextLabel")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 1147.0
-offset_bottom = 647.0
+offset_right = 214.0
+offset_bottom = 714.0
 text = "Money: $0
 Users: 0"

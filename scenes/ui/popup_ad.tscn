@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/PopupAd.cs" id="1_i6a36"]
 
-[node name="PopupAd" type="Window"]
+[node name="PopupAd" type="Window" node_paths=PackedStringArray("AdLabel")]
 auto_translate_mode = 1
 title = "Promotion"
 initial_position = 4
@@ -10,6 +10,7 @@ size = Vector2i(300, 100)
 unresizable = true
 always_on_top = true
 script = ExtResource("1_i6a36")
+AdLabel = NodePath("Label")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 4.0

@@ -19,28 +19,27 @@ public partial class EventManager : Node
     private void OnGameUpdate()
     {
         if (RandomBool(1000)) {
-            GD.Print("DDoS");
             this.CreateEvent(Event.DDoS, 10.0f);
         }
         
         uint adLevel = UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads);
+        GD.Print(adLevel);
         
-        if (adLevel > 1 && RandomBool(10))
+        if (adLevel > 2 && RandomBool(10))
         {
-            GD.Print("Ad");
             Node root = GetTree().GetRoot();
             root.AddChild(AdScene.Instantiate());
         }
     }
     
-    private static bool RandomBool(int chance)
+    private static bool RandomBool(uint chance)
     {
         return RandomNumber(chance) == 0;
     }
     
-    private static int RandomNumber(int restrict)
+    private static uint RandomNumber(uint restrict)
     {
-        return (int)(GD.Randi() % restrict);
+        return (uint)(GD.Randi() % restrict);
     }
     
     public async void CreateEvent(Event selectedEvent, float durration)

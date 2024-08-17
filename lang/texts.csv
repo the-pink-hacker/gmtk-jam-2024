@@ -2,10 +2,12 @@ keys,us_en
 null,INVALID
 upgrade.full,Fully Upgraded
 upgrade.ads,Ads
-upgrade.ads.0,Banner Ads
-upgrade.ads.1,Popup Ads
-upgrade.ads.2,Skip-able Video Ads
-upgrade.ads.3,Unskip-able Video Ads
+upgrade.ads.0,Text Banner Ads
+upgrade.ads.1,Referral Links
+upgrade.ads.2,Text Popup Ads
+upgrade.ads.3,Image Popup Ads
+upgrade.ads.4,Skip-able Video Ads
+upgrade.ads.5,Unskip-able Video Ads
 upgrade.server,Server
 upgrade.server.0,Blackberry Flip Phone
 upgrade.server.1,Raspberry Pi
@@ -23,3 +25,9 @@ upgrade.developer.5,Junior Fullstack Dev
 upgrade.developer.6,Senior Fullstack Dev
 upgrade.developer.7,Fleet of Fullstack Devs
 upgrade.developer.8,Open Sourcing
+ad.popup.0,Free Virus Scan!!!
+ad.popup.1,"Virus Detected!
+Click Now To Scan"
+ad.popup.2,Try Google Chrome Today
+ad.popup.3,Switch To Edge Or Else…
+ad.popup.4,Ad Blocker Free Download
