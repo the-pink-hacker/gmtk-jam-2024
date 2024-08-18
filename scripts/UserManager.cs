@@ -16,7 +16,7 @@ public partial class UserManager : Node
     private void OnGameUpdate()
     {
         float satisfaction = SatisfactionManager.Instance.Satisfaction;
-        float joinIncentive = 1.0f + (Users / 100.0f);
+        float joinIncentive = 1.0f;
         
         long newUsers = (long)Math.Round(joinIncentive * 2.0f * (satisfaction - 0.5f));
         

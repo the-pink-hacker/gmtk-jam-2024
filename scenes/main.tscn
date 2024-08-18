@@ -21,41 +21,42 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Store" type="Control" parent="CanvasLayer/TabContainer"]
+[node name="Store" type="HBoxContainer" parent="CanvasLayer/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="StoreBuyButton" parent="CanvasLayer/TabContainer/Store" instance=ExtResource("2_7gqyv")]
-layout_mode = 0
-offset_left = 637.0
-offset_top = 145.0
-offset_right = 755.0
-offset_bottom = 176.0
+[node name="Upgrades" type="VBoxContainer" parent="CanvasLayer/TabContainer/Store"]
+layout_mode = 2
+
+[node name="StoreBuyButton" parent="CanvasLayer/TabContainer/Store/Upgrades" instance=ExtResource("2_7gqyv")]
+layout_mode = 2
+tooltip_text = "Test"
 text = "upgrade.ads.0"
 Cost = 10
 MaxUpgrades = 10
 
-[node name="StoreBuyButton2" parent="CanvasLayer/TabContainer/Store" instance=ExtResource("2_7gqyv")]
-layout_mode = 0
-offset_left = 602.0
-offset_top = 206.0
-offset_right = 681.0
-offset_bottom = 247.0
+[node name="StoreBuyButton2" parent="CanvasLayer/TabContainer/Store/Upgrades" instance=ExtResource("2_7gqyv")]
+layout_mode = 2
 text = "upgrade.server.0"
 Upgrade = 3
 Cost = 10
 MaxUpgrades = 10
 
-[node name="StoreBuyButton3" parent="CanvasLayer/TabContainer/Store" instance=ExtResource("2_7gqyv")]
-layout_mode = 0
-offset_left = 613.0
-offset_top = 273.0
-offset_right = 731.0
-offset_bottom = 314.0
+[node name="StoreBuyButton3" parent="CanvasLayer/TabContainer/Store/Upgrades" instance=ExtResource("2_7gqyv")]
+layout_mode = 2
 text = "upgrade.developer.0"
 Upgrade = 4
 Cost = 50
 MaxUpgrades = 9
 
+[node name="Preview" type="VBoxContainer" parent="CanvasLayer/TabContainer/Store"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Store/Preview"]
+layout_mode = 2
+text = "Title
+Description
+"
+
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("1_ivxl1")]
-position = Vector2(0, 31)
+position = Vector2(1046, 31)

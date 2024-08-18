@@ -15,7 +15,7 @@ public partial class PopupAd : Window
         this.AdLabel.SetText(translationKey);
     }
     
-    public void OnClose()
+    private void OnClose()
     {
         this.QueueFree();
     }

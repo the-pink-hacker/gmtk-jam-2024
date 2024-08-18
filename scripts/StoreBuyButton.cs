@@ -4,23 +4,25 @@ using System;
 public partial class StoreBuyButton : MenuButton
 {
     [Export]
-    public Upgrade Upgrade { get; private set; }
+    private Upgrade Upgrade;
     
     [Export]
-    public ulong Cost { get; private set; }
+    private ulong Cost;
     
     [Export]
-    public double Time { get; private set; }
+    private double Time;
     
     [Export]
-    public uint MaxUpgrades { get; private set; }
+    private uint MaxUpgrades;
+    
+    private uint Amount;
     
     public override void _Ready()
     {
         this.SetLabel(0);
     }
     
-    public void _on_pressed()
+    private void OnPressed()
     {
         if (UpgradeManager.Instance.IsCurrentlyDeveloping()) return;
         uint amount = UpgradeManager.Instance.CheckUpgrade(this.Upgrade);
@@ -28,6 +30,7 @@ public partial class StoreBuyButton : MenuButton
         if (amount < MaxUpgrades && Wallet.Instance.TakeMoney(this.Cost))
         {
             UpgradeManager.Instance.DevelopeUpgrade(this.Upgrade, this.Time);
+            this.Amount = amount + 1;
 
             if (amount + 1 >= MaxUpgrades)
             {
@@ -38,6 +41,16 @@ public partial class StoreBuyButton : MenuButton
                 this.SetLabel(amount + 1);
             }
         }
+    }
+    
+    private void OnHover()
+    {
+        Label preview = GetTree().GetRoot().GetNode<Label>("Main/CanvasLayer/TabContainer/Store/Preview/Label");
+        string key = this.Upgrade.ToTranslationKey();
+        string category = Tr(key);
+        string upgrade = Tr($"{key}.{this.Amount}");
+        string description = Tr($"{key}.{this.Amount}.description");
+        preview.SetText($"{category}: {upgrade}\n{description}");
     }
     
     private void SetLabel(uint amount)

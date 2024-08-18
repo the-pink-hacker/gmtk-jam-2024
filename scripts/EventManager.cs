@@ -23,7 +23,6 @@ public partial class EventManager : Node
         }
         
         uint adLevel = UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads);
-        GD.Print(adLevel);
         
         if (adLevel > 2 && RandomBool(10))
         {
