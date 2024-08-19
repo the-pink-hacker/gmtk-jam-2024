@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwnes6x4f2e"]
+
+[ext_resource type="PackedScene" uid="uid://dn7e1ujpvjlyx" path="res://scenes/ui/store_buy_button.tscn" id="1_quti7"]
+[ext_resource type="PackedScene" uid="uid://berwhpyv8nuvd" path="res://scenes/ui/stats.tscn" id="2_7biek"]
+
+[node name="Store" type="HBoxContainer"]
+visible = false
+metadata/_tab_index = 1
+
+[node name="Upgrades" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StoreBuyButton" parent="Upgrades" instance=ExtResource("1_quti7")]
+layout_mode = 2
+tooltip_text = "Test"
+text = "upgrade.ads.0"
+Cost = 10
+MaxUpgrades = 10
+
+[node name="StoreBuyButton2" parent="Upgrades" instance=ExtResource("1_quti7")]
+layout_mode = 2
+text = "upgrade.server.0"
+Upgrade = 3
+Cost = 10
+MaxUpgrades = 10
+
+[node name="StoreBuyButton3" parent="Upgrades" instance=ExtResource("1_quti7")]
+layout_mode = 2
+text = "upgrade.developer.0"
+Upgrade = 4
+Cost = 50
+MaxUpgrades = 9
+
+[node name="Preview" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Preview"]
+layout_mode = 2
+text = "Title
+Description
+"
+
+[node name="Stats" parent="." instance=ExtResource("2_7biek")]
+layout_mode = 2
+size_flags_horizontal = 3

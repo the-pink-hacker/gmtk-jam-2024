@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://l3n1gpr5nx4a"]
+[gd_scene load_steps=3 format=3 uid="uid://l3n1gpr5nx4a"]
 
-[ext_resource type="PackedScene" uid="uid://bwav1k0natynn" path="res://scenes/ui/hud.tscn" id="1_ivxl1"]
-[ext_resource type="Script" path="res://scripts/WebsiteNameButton.cs" id="1_ljmk4"]
-[ext_resource type="PackedScene" uid="uid://dn7e1ujpvjlyx" path="res://scenes/ui/store_buy_button.tscn" id="2_7gqyv"]
+[ext_resource type="PackedScene" uid="uid://nvl3j42jvnss" path="res://scenes/ui/home.tscn" id="1_ecpfw"]
+[ext_resource type="PackedScene" uid="uid://bwnes6x4f2e" path="res://scenes/ui/store.tscn" id="2_v0og3"]
 
 [node name="Main" type="Node2D"]
 
@@ -36,90 +35,8 @@ grow_vertical = 2
 tab_alignment = 1
 current_tab = 0
 
-[node name="Home" type="Control" parent="CanvasLayer/TabContainer"]
-layout_mode = 2
-metadata/_tab_index = 0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/Home"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Home/VBoxContainer"]
-layout_mode = 2
-text = "ui.website_name"
-
-[node name="Name" type="HBoxContainer" parent="CanvasLayer/TabContainer/Home/VBoxContainer"]
+[node name="Home" parent="CanvasLayer/TabContainer" instance=ExtResource("1_ecpfw")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Home/VBoxContainer/Name"]
+[node name="Store" parent="CanvasLayer/TabContainer" instance=ExtResource("2_v0og3")]
 layout_mode = 2
-text = "ui.website_name.title"
-
-[node name="TextBox" type="TextEdit" parent="CanvasLayer/TabContainer/Home/VBoxContainer/Name"]
-custom_minimum_size = Vector2(300, 40)
-layout_mode = 2
-placeholder_text = "ui.website_name.title.placeholder"
-
-[node name="Domain" type="HBoxContainer" parent="CanvasLayer/TabContainer/Home/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Home/VBoxContainer/Domain"]
-layout_mode = 2
-text = "ui.website_name.domain"
-
-[node name="TextBox" type="TextEdit" parent="CanvasLayer/TabContainer/Home/VBoxContainer/Domain"]
-custom_minimum_size = Vector2(300, 40)
-layout_mode = 2
-placeholder_text = "ui.website_name.domain.placeholder"
-
-[node name="Button" type="Button" parent="CanvasLayer/TabContainer/Home/VBoxContainer" node_paths=PackedStringArray("NameField", "DomainField")]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "ui.website_name.submit"
-script = ExtResource("1_ljmk4")
-NameField = NodePath("../Name/TextBox")
-DomainField = NodePath("../Domain/TextBox")
-
-[node name="Store" type="HBoxContainer" parent="CanvasLayer/TabContainer"]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 1
-
-[node name="Upgrades" type="VBoxContainer" parent="CanvasLayer/TabContainer/Store"]
-layout_mode = 2
-
-[node name="StoreBuyButton" parent="CanvasLayer/TabContainer/Store/Upgrades" instance=ExtResource("2_7gqyv")]
-layout_mode = 2
-tooltip_text = "Test"
-text = "upgrade.ads.0"
-Cost = 10
-MaxUpgrades = 10
-
-[node name="StoreBuyButton2" parent="CanvasLayer/TabContainer/Store/Upgrades" instance=ExtResource("2_7gqyv")]
-layout_mode = 2
-text = "upgrade.server.0"
-Upgrade = 3
-Cost = 10
-MaxUpgrades = 10
-
-[node name="StoreBuyButton3" parent="CanvasLayer/TabContainer/Store/Upgrades" instance=ExtResource("2_7gqyv")]
-layout_mode = 2
-text = "upgrade.developer.0"
-Upgrade = 4
-Cost = 50
-MaxUpgrades = 9
-
-[node name="Preview" type="VBoxContainer" parent="CanvasLayer/TabContainer/Store"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Store/Preview"]
-layout_mode = 2
-text = "Title
-Description
-"
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource("1_ivxl1")]
-position = Vector2(1046, 31)
-
-[connection signal="pressed" from="CanvasLayer/TabContainer/Home/VBoxContainer/Button" to="CanvasLayer/TabContainer/Home/VBoxContainer/Button" method="OnClick"]

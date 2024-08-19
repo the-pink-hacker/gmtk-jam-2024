@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://berwhpyv8nuvd"]
+
+[ext_resource type="Script" path="res://scripts/stats/MoneyStatLabel.cs" id="1_3xx7c"]
+[ext_resource type="Script" path="res://scripts/stats/UsersStatLabel.cs" id="2_v882p"]
+[ext_resource type="Script" path="res://scripts/stats/SatisfactionStatLabel.cs" id="3_kg3hx"]
+[ext_resource type="Script" path="res://scripts/stats/IntegrityStatLabel.cs" id="4_dn0pm"]
+
+[node name="Stats" type="VBoxContainer"]
+offset_right = 88.0
+offset_bottom = 50.0
+
+[node name="MoneyStatLabel" type="Label" parent="."]
+layout_mode = 2
+text = "stat.money"
+script = ExtResource("1_3xx7c")
+
+[node name="UserStatLabel" type="Label" parent="."]
+layout_mode = 2
+text = "stat.users"
+script = ExtResource("2_v882p")
+
+[node name="SatisfactionStatLabel" type="Label" parent="."]
+layout_mode = 2
+text = "stat.satisfaction"
+script = ExtResource("3_kg3hx")
+
+[node name="IntegrityStatLabel" type="Label" parent="."]
+layout_mode = 2
+text = "stat.integrity"
+script = ExtResource("4_dn0pm")

@@ -5,13 +5,24 @@ public partial class Wallet : Node
 {
     public static Wallet Instance { get; private set; }
 
-    [Export]
-    public double Money;
+    private double _money;
+    public double Money
+    {
+        get => this._money;
+        set
+        {
+            _money = value;
+            EmitSignal(SignalName.MoneyUpdate, value);
+        }
+    }
+
+    [Signal]
+    public delegate void MoneyUpdateEventHandler(double money);
 
     public override void _Ready()
     {
         Instance = this;
-        this.Money = 100;
+        this.Money = 1_000;
         GameLoop.Instance.GameUpdate += OnGameUpdate;
     }
 

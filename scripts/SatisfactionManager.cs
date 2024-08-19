@@ -5,8 +5,18 @@ public partial class SatisfactionManager : Node
 {
     public static SatisfactionManager Instance { get; private set; }
 
-    [Export]
-    public float Satisfaction { get; set; } = 1.0f;
+    private float _satisfaction = 1.0f;
+    public float Satisfaction {
+        get => this._satisfaction;
+        set
+        {
+            this._satisfaction = value;
+            EmitSignal(SignalName.SatisfactionUpdate, value);
+        }
+    }
+
+    [Signal]
+    public delegate void SatisfactionUpdateEventHandler(float satisfaction);
 
     public override void _Ready()
     {

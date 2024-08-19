@@ -5,7 +5,18 @@ public partial class UserManager : Node
 {
     public static UserManager Instance { get; private set; }
 
-    public ulong Users { get; private set; }
+    private ulong _users;
+    public ulong Users {
+        get => this._users;
+        private set
+        {
+            this._users = value;
+            EmitSignal(SignalName.UsersUpdate, value);
+        }
+    }
+
+    [Signal]
+    public delegate void UsersUpdateEventHandler(ulong users);
 
     public override void _Ready()
     {

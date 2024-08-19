@@ -5,8 +5,18 @@ public partial class IntegrityManager : Node
 {
     public static IntegrityManager Instance { get; private set; }
 
-    [Export]
-    public float Integrity = 1.0f;
+    private float _integrity = 1.0f;
+    public float Integrity {
+        get => this._integrity;
+        set
+        {
+            this._integrity = value;
+            EmitSignal(SignalName.IntegrityUpdate, value);
+        }
+    }
+
+    [Signal]
+    public delegate void IntegrityUpdateEventHandler(float integrity);
 
     public override void _Ready()
     {

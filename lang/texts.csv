@@ -1,4 +1,4 @@
-keys,us_en
+keys,en
 null,INVALID
 upgrade.full,Fully Upgraded
 upgrade.ads,Ads
@@ -48,3 +48,7 @@ ui.website_name.title.placeholder,My Website
 ui.website_name.domain,Domain
 ui.website_name.domain.placeholder,mywebsite.com
 ui.website_name.submit,Set Website Name
+stat.money,"Money: {0,0:C2}"
+stat.users,"Users: {0,0:N0}"
+stat.satisfaction,"Satisfaction: {0,7:P2}"
+stat.integrity,"Integrity: {0,7:P2}"

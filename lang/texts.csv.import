@@ -6,10 +6,10 @@ uid="uid://cm74x1gamegu4"
 
 [deps]
 
-files=["res://lang/texts.us.translation"]
+files=["res://lang/texts.en.translation"]
 
 source_file="res://lang/texts.csv"
-dest_files=["res://lang/texts.us.translation"]
+dest_files=["res://lang/texts.en.translation"]
 
 [params]
 
