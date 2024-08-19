@@ -7,7 +7,8 @@ public enum Upgrade
     Donations,
     DDoSProtection,
     Servers,
-    Developer
+    Developer,
+    Blog,
 }
 
 public static class UpgradeMethods
@@ -21,6 +22,7 @@ public static class UpgradeMethods
             Upgrade.DDoSProtection => "upgrade.ddos",
             Upgrade.Servers => "upgrade.server",
             Upgrade.Developer => "upgrade.developer",
+            Upgrade.Blog => "upgrade.blog",
             _ => "null",
         };
     }

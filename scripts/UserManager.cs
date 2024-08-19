@@ -27,10 +27,20 @@ public partial class UserManager : Node
     private void OnGameUpdate()
     {
         float satisfaction = SatisfactionManager.Instance.Satisfaction;
-        float joinIncentive = 1.0f;
+        float joinIncentive = 2.0f * (satisfaction - 0.5f);
         
-        long newUsers = (long)Math.Round(joinIncentive * 2.0f * (satisfaction - 0.5f));
+        long newUsers = (long)this.CalculateVisitors() * (long)Math.Round(satisfaction);
+        this.Users = (ulong)Math.Max((long)this.Users + newUsers, 0);
+    }
+    
+    private ulong CalculateVisitors()
+    {
+        ulong visitors = 0;
         
-        this.Users = (ulong)Math.Max((long)this.Users + joinIncentive, 0);
+        uint blogLevel = UpgradeManager.Instance.CheckUpgrade(Upgrade.Blog);
+        
+        if (blogLevel > 0) visitors += (ulong)Math.Pow(2, blogLevel - 1);
+        
+        return visitors;
     }
 }

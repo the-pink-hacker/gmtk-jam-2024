@@ -18,7 +18,7 @@ alignment = 1
 [node name="WebsiteURL" type="Label" parent="CanvasLayer/BrowserBar"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "https://websitename.com"
+text = "https://mywebsite.com"
 
 [node name="WebsiteName" type="Label" parent="CanvasLayer/BrowserBar"]
 layout_mode = 2

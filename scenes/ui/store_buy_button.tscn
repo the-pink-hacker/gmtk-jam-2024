@@ -8,8 +8,9 @@ offset_bottom = 41.0
 toggle_mode = false
 text = "Buy"
 script = ExtResource("1_40v6l")
+Cost = 10
 Time = 10.0
-MaxUpgrades = 1
+MaxUpgrades = 10
 
 [connection signal="mouse_entered" from="." to="." method="OnHover"]
 [connection signal="pressed" from="." to="." method="OnPressed"]
