@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bix8adf10g3pn"]
+
+[ext_resource type="Script" path="res://scripts/UpgradeProgress.cs" id="1_qkw2a"]
+
+[node name="UpgradeProgress" type="ProgressBar"]
+script = ExtResource("1_qkw2a")

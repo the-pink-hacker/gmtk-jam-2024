@@ -45,7 +45,7 @@ public partial class StoreBuyButton : MenuButton
     
     private void OnHover()
     {
-        Label preview = GetTree().GetRoot().GetNode<Label>("Main/CanvasLayer/TabContainer/Store/Preview/Label");
+        Label preview = GetTree().GetRoot().GetNode<Label>("Main/CanvasLayer/TabContainer/Store/HBoxContainer/Preview/Label");
         string key = this.Upgrade.ToTranslationKey();
         string category = Tr(key);
         string upgrade = Tr($"{key}.{this.Amount}");

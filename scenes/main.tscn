@@ -39,4 +39,5 @@ current_tab = 0
 layout_mode = 2
 
 [node name="Store" parent="CanvasLayer/TabContainer" instance=ExtResource("2_v0og3")]
+visible = false
 layout_mode = 2
