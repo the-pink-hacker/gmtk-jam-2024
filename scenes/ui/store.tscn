@@ -21,29 +21,22 @@ size_flags_horizontal = 3
 layout_mode = 2
 text = "upgrade.blog.0"
 Upgrade = 5
-Cost = 10
-MaxUpgrades = 10
 
 [node name="StoreBuyButton" parent="HBoxContainer/Upgrades" instance=ExtResource("1_quti7")]
 layout_mode = 2
 tooltip_text = "Test"
 text = "upgrade.ads.0"
-Cost = 10
-MaxUpgrades = 10
 
 [node name="StoreBuyButton2" parent="HBoxContainer/Upgrades" instance=ExtResource("1_quti7")]
 layout_mode = 2
 text = "upgrade.server.0"
 Upgrade = 3
-Cost = 10
-MaxUpgrades = 10
 
 [node name="StoreBuyButton3" parent="HBoxContainer/Upgrades" instance=ExtResource("1_quti7")]
 layout_mode = 2
 text = "upgrade.developer.0"
 Upgrade = 4
 Cost = 50
-MaxUpgrades = 10
 
 [node name="Preview" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
