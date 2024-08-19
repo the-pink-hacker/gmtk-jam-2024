@@ -13,11 +13,10 @@ public partial class PopupAd : Window
     
     public override void _Ready()
     {
-        GD.Print("ad");
-        Vector2I windowSize = GetWindow().Size;
+        Vector2I windowSize = GetTree().GetRoot().GetWindow().Size;
         this.PopupOnParent(new Rect2I(
-            RandomNumber(windowSize.X),
-            RandomNumber(windowSize.Y),
+            RandomNumber(windowSize.X - PopupSize.X),
+            RandomNumber(windowSize.Y - PopupSize.Y),
             PopupSize.X,
             PopupSize.Y
         ));

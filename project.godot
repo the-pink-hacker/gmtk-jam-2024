@@ -15,8 +15,10 @@ config/description="A game made for the GMTK 2024 Game Jam created by ThePinkHac
 config/version="0.1.0"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+boot_splash/image="res://textures/powered_by_webism_1080.png"
 config/icon="res://icons/webism_256.png"
 config/windows_native_icon="res://icons/webism.ico"
+boot_splash/minimum_display_time=5000
 
 [autoload]
 
