@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" path="res://scripts/StoreBuyButton.cs" id="1_40v6l"]
 
-[node name="StoreBuyButton" type="MenuButton"]
+[node name="StoreBuyButton" type="Button"]
 offset_right = 79.0
 offset_bottom = 41.0
-toggle_mode = false
 text = "Buy"
 script = ExtResource("1_40v6l")
 Cost = 10

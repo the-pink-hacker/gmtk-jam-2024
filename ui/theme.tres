@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://c6qp8m00ogblm"]
+
+[ext_resource type="StyleBox" uid="uid://y6affpisgwi8" path="res://ui/styles/item_normal.tres" id="1_tf76k"]
+[ext_resource type="StyleBox" uid="uid://bddw7vgjnehwb" path="res://ui/styles/background.tres" id="2_44n50"]
+[ext_resource type="StyleBox" uid="uid://b3f4tepikf3q1" path="res://ui/styles/accent.tres" id="2_s4mi5"]
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/styles/normal = ExtResource("1_tf76k")
+Label/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 4
+ProgressBar/font_sizes/font_size = 32
+ProgressBar/styles/background = ExtResource("1_tf76k")
+ProgressBar/styles/fill = ExtResource("2_s4mi5")
+TabContainer/styles/panel = ExtResource("2_44n50")

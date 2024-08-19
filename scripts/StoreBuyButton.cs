@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class StoreBuyButton : MenuButton
+public partial class StoreBuyButton : Button
 {
     [Export]
     private Upgrade Upgrade;

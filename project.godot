@@ -15,6 +15,7 @@ config/description="A game made for the GMTK 2024 Game Jam created by ThePinkHac
 config/version="0.1.0"
 run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
+boot_splash/bg_color=Color(0.783523, 0.783523, 0.783523, 1)
 boot_splash/image="res://textures/powered_by_webism_1080.png"
 config/icon="res://icons/webism_256.png"
 config/windows_native_icon="res://icons/webism.ico"
@@ -38,7 +39,12 @@ mouse_cursor/custom_image="res://textures/cursor.png"
 
 [dotnet]
 
-project/assembly_name="GMTK Jam 2024"
+project/assembly_name="Webism"
+
+[gui]
+
+theme/custom="res://ui/theme.tres"
+theme/custom_font="res://fonts/NotoSerif-Regular.ttf"
 
 [internationalization]
 

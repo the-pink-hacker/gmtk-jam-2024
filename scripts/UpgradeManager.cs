@@ -33,7 +33,7 @@ public partial class UpgradeManager : Node
         uint developers = this.CheckUpgrade(Upgrade.Developer);
         this.DevelopmentTime = time / (developers + 1.0);
         this.DevelopmentTimer = GetTree().CreateTimer(this.DevelopmentTime);
-        //await ToSignal(this.DevelopmentTimer, SceneTreeTimer.SignalName.Timeout);
+        await ToSignal(this.DevelopmentTimer, SceneTreeTimer.SignalName.Timeout);
         this.GrantUpgrade(upgrade);
         this.DevelopmentTimer = null;
     }
