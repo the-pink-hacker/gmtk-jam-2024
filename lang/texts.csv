@@ -42,3 +42,9 @@ Click Now To Scan"
 ad.popup.2,Try Google Chrome Today
 ad.popup.3,Switch To Edge Or Else…
 ad.popup.4,Ad Blocker Free Download
+ui.website_name,Set Your Website Name
+ui.website_name.title,Title
+ui.website_name.title.placeholder,My Website
+ui.website_name.domain,Domain
+ui.website_name.domain.placeholder,mywebsite.com
+ui.website_name.submit,Set Website Name
