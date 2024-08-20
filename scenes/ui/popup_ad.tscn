@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdot4td5kpunx"]
+[gd_scene load_steps=3 format=3 uid="uid://bdot4td5kpunx"]
 
 [ext_resource type="Script" path="res://scripts/PopupAd.cs" id="1_i6a36"]
+[ext_resource type="StyleBox" uid="uid://bddw7vgjnehwb" path="res://ui/styles/background.tres" id="2_cwwh0"]
 
 [node name="PopupAd" type="Window" node_paths=PackedStringArray("AdLabel")]
 auto_translate_mode = 1
@@ -11,13 +12,19 @@ unresizable = true
 always_on_top = true
 script = ExtResource("1_i6a36")
 PopupSize = Vector2i(300, 100)
-AdLabel = NodePath("Label")
+AdLabel = NodePath("PanelContainer/Label")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 154.0
-offset_bottom = 96.0
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_cwwh0")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 text = "DOWNLOAD FREE!!!"
 
 [connection signal="close_requested" from="." to="." method="OnClose"]
