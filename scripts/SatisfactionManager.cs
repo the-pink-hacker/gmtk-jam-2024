@@ -26,10 +26,15 @@ public partial class SatisfactionManager : Node
     
     private void OnGameUpdate()
     {
-        float integrity = IntegrityManager.Instance.Integrity;
-        float ads = UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads);
         float bonus = 0.0f;
+        
+        uint ads = UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads);
         bonus -= ads * 0.05f;
+        
+        uint blogLevel = UpgradeManager.Instance.CheckUpgrade(Upgrade.Blog);
+        bonus += blogLevel * 0.05f;
+        
+        float integrity = IntegrityManager.Instance.Integrity;
         this.Satisfaction = Math.Clamp(1.0f + bonus, 0.0f, 1.0f) * integrity;
     }
 }

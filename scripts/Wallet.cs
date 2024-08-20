@@ -28,10 +28,25 @@ public partial class Wallet : Node
 
     private void OnGameUpdate()
     {
-        if (UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads) >= 1)
+        double moneyChange = 0.0;
+        ulong users = UserManager.Instance.Users;
+        uint adAmount = UpgradeManager.Instance.CheckUpgrade(Upgrade.Ads);
+        moneyChange += users * 0.01 * adAmount;
+        moneyChange -= users * 0.01;
+        
+        uint serverLevel = UpgradeManager.Instance.CheckUpgrade(Upgrade.Servers);
+        if (serverLevel > 0)
         {
-            this.Money += UserManager.Instance.Users * 0.01;
+            moneyChange -= Math.Pow(10, serverLevel - 1);
         }
+        
+        uint devs = UpgradeManager.Instance.CheckUpgrade(Upgrade.Developer);
+        if (serverLevel > 2)
+        {
+            moneyChange += Math.Pow(2, devs - 3);
+        }
+        
+        this.Money += moneyChange;
     }
     
     public bool TakeMoney(double amount)

@@ -7,6 +7,7 @@ public partial class PopupAd : Window
     private Vector2I PopupSize;
     
     private const uint TEXT_VARIANTS = 6;
+    private const int MARGIN = 32;
     
     [Export]
     public Label AdLabel { get; private set; }
@@ -15,8 +16,8 @@ public partial class PopupAd : Window
     {
         Vector2I windowSize = GetTree().GetRoot().GetWindow().Size;
         this.PopupOnParent(new Rect2I(
-            RandomNumber(windowSize.X - PopupSize.X),
-            RandomNumber(windowSize.Y - PopupSize.Y),
+            RandomNumber(windowSize.X - PopupSize.X - 2 * MARGIN) + MARGIN,
+            RandomNumber(windowSize.Y - PopupSize.Y - 2 * MARGIN) + MARGIN,
             PopupSize.X,
             PopupSize.Y
         ));
