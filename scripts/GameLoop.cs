@@ -6,6 +6,9 @@ public partial class GameLoop : Node
     public static GameLoop Instance { get; private set; }
     public string WebsiteName { get; private set; } = "My Website";
     public string WebsiteDomain { get; private set; } = "mywebsite.com";
+    
+    private Label NameLabel;
+    private Label UrlLabel;
 
     [Signal]
     public delegate void GameUpdateEventHandler();
@@ -14,6 +17,10 @@ public partial class GameLoop : Node
     {
         Instance = this;
         GD.Randomize();
+        
+        Node root = this.GetTree().GetRoot();
+        this.NameLabel = root.GetNode<Label>("Main/CanvasLayer/PanelContainer/MarginContainer/BrowserBar/WebsiteName");
+        this.UrlLabel = root.GetNode<Label>("Main/CanvasLayer/PanelContainer/MarginContainer/BrowserBar/WebsiteURL");
 
         while (true)
         {
@@ -26,10 +33,7 @@ public partial class GameLoop : Node
     {
         if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(domain)) return;
         
-        Node root = this.GetTree().GetRoot();
-        Label nameLabel = root.GetNode<Label>("Main/CanvasLayer/BrowserBar/WebsiteName");
-        Label urlLabel = root.GetNode<Label>("Main/CanvasLayer/BrowserBar/WebsiteURL");
-        nameLabel.SetText(name);
-        urlLabel.SetText($"https://{domain}");
+        NameLabel.SetText(name);
+        UrlLabel.SetText($"https://{domain}");
     }
 }

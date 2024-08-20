@@ -17,26 +17,30 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="StoreBuyButton4" parent="HBoxContainer/Upgrades" instance=ExtResource("1_quti7")]
+[node name="StoreBuyButton4" parent="HBoxContainer/Upgrades" node_paths=PackedStringArray("Preview") instance=ExtResource("1_quti7")]
 layout_mode = 2
 text = "upgrade.blog.0"
 Upgrade = 5
+Preview = NodePath("../../Preview/Label")
 
-[node name="StoreBuyButton" parent="HBoxContainer/Upgrades" instance=ExtResource("1_quti7")]
+[node name="StoreBuyButton" parent="HBoxContainer/Upgrades" node_paths=PackedStringArray("Preview") instance=ExtResource("1_quti7")]
 layout_mode = 2
 tooltip_text = "Test"
 text = "upgrade.ads.0"
+Preview = NodePath("../../Preview/Label")
 
-[node name="StoreBuyButton2" parent="HBoxContainer/Upgrades" instance=ExtResource("1_quti7")]
+[node name="StoreBuyButton2" parent="HBoxContainer/Upgrades" node_paths=PackedStringArray("Preview") instance=ExtResource("1_quti7")]
 layout_mode = 2
 text = "upgrade.server.0"
 Upgrade = 3
+Preview = NodePath("../../Preview/Label")
 
-[node name="StoreBuyButton3" parent="HBoxContainer/Upgrades" instance=ExtResource("1_quti7")]
+[node name="StoreBuyButton3" parent="HBoxContainer/Upgrades" node_paths=PackedStringArray("Preview") instance=ExtResource("1_quti7")]
 layout_mode = 2
 text = "upgrade.developer.0"
 Upgrade = 4
 Cost = 50
+Preview = NodePath("../../Preview/Label")
 
 [node name="Preview" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2

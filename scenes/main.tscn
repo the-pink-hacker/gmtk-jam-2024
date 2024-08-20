@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://l3n1gpr5nx4a"]
+[gd_scene load_steps=4 format=3 uid="uid://l3n1gpr5nx4a"]
 
 [ext_resource type="PackedScene" uid="uid://nvl3j42jvnss" path="res://scenes/ui/home.tscn" id="1_ecpfw"]
+[ext_resource type="LabelSettings" uid="uid://downtdpx7nu72" path="res://ui/styles/label_alt.tres" id="1_hu7qk"]
 [ext_resource type="PackedScene" uid="uid://bwnes6x4f2e" path="res://scenes/ui/store.tscn" id="2_v0og3"]
 
 [node name="Main" type="Node2D"]
@@ -8,36 +9,44 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="BrowserBar" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 31.0
-grow_horizontal = 2
-alignment = 1
-
-[node name="WebsiteURL" type="Label" parent="CanvasLayer/BrowserBar"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "https://mywebsite.com"
-
-[node name="WebsiteName" type="Label" parent="CanvasLayer/BrowserBar"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "My Website"
-horizontal_alignment = 2
-
-[node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+
+[node name="BrowserBar" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="WebsiteURL" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/BrowserBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "https://mywebsite.com"
+label_settings = ExtResource("1_hu7qk")
+structured_text_bidi_override = 1
+
+[node name="WebsiteName" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/BrowserBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "My Website"
+label_settings = ExtResource("1_hu7qk")
+horizontal_alignment = 2
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
 tab_alignment = 1
 current_tab = 0
 
-[node name="Home" parent="CanvasLayer/TabContainer" instance=ExtResource("1_ecpfw")]
+[node name="Home" parent="CanvasLayer/PanelContainer/MarginContainer/TabContainer" instance=ExtResource("1_ecpfw")]
 layout_mode = 2
 
-[node name="Store" parent="CanvasLayer/TabContainer" instance=ExtResource("2_v0og3")]
+[node name="Store" parent="CanvasLayer/PanelContainer/MarginContainer/TabContainer" instance=ExtResource("2_v0og3")]
 visible = false
 layout_mode = 2

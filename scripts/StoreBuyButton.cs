@@ -15,6 +15,9 @@ public partial class StoreBuyButton : Button
     [Export]
     private uint MaxUpgrades;
     
+    [Export]
+    private Label Preview;
+    
     private uint Amount;
     
     public override void _Ready()
@@ -45,12 +48,11 @@ public partial class StoreBuyButton : Button
     
     private void OnHover()
     {
-        Label preview = GetTree().GetRoot().GetNode<Label>("Main/CanvasLayer/TabContainer/Store/HBoxContainer/Preview/Label");
         string key = this.Upgrade.ToTranslationKey();
         string category = Tr(key);
         string upgrade = Tr($"{key}.{this.Amount}");
         string description = Tr($"{key}.{this.Amount}.description");
-        preview.SetText($"{category}: {upgrade}\n{description}");
+        Preview.SetText($"{category}: {upgrade}\n{description}");
     }
     
     private void SetLabel(uint amount)
