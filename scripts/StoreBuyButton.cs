@@ -51,7 +51,7 @@ public partial class StoreBuyButton : Button
         string key = this.Upgrade.ToTranslationKey();
         string category = Tr(key);
         string upgrade = Tr($"{key}.{this.Amount}");
-        string description = Tr($"{key}.{this.Amount}.description");
+        string description = Tr($"{key}.description");
         Preview.SetText($"{category}: {upgrade}\n{description}");
     }
     

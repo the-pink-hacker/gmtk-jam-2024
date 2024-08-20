@@ -2,20 +2,31 @@ keys,en
 null,INVALID
 upgrade.full,Fully Upgraded
 upgrade.ads,Ads
+upgrade.ads.description,Make a small amount of money per user.
 upgrade.ads.0,Text Banner Ads
 upgrade.ads.1,Referral Links
 upgrade.ads.2,Text Popup Ads
 upgrade.ads.3,Image Popup Ads
 upgrade.ads.4,Skip-able Video Ads
 upgrade.ads.5,Unskip-able Video Ads
+upgrade.ads.6,Full Screen Ads
+upgrade.ads.7,Subliminal Messaging
+upgrade.ads.8,Spyware
+upgrade.ads.9,Buy Webism Browser
 upgrade.server,Server
+upgrade.server.description,Better servers can handle more users. Watch out though for the costly upkeep of them.
 upgrade.server.0,Blackberry Flip Phone
 upgrade.server.1,Raspberry Pi
 upgrade.server.2,Old Laptop
 upgrade.server.3,Raspberry Pi Cluster
 upgrade.server.4,Small Server Rack
 upgrade.server.5,AMD Ryzen Epic
+upgrade.server.6,Overclocking
+upgrade.server.7,Server Farm
+upgrade.server.8,Watercooling
+upgrade.server.9,CDN
 upgrade.developer,Web Developers
+upgrade.developer.description,Develop upgrades faster at the cost of their salaries.
 upgrade.developer.0,Intern
 upgrade.developer.1,Fleet of Interns
 upgrade.developer.2,Junior Javascript Dev
@@ -25,17 +36,31 @@ upgrade.developer.5,Junior Fullstack Dev
 upgrade.developer.6,Senior Fullstack Dev
 upgrade.developer.7,Fleet of Fullstack Devs
 upgrade.developer.8,Open Sourcing
+upgrade.developer.9,Unconditional “Employment”
 upgrade.seo,Search Engine Optimization
+upgrade.seo.description,Get more users to your site.
 upgrade.seo.0,Meta Tags
 upgrade.seo.1,Sitemap
 upgrade.seo.2,Advanced SEO
 upgrade.seo.3,Black Magic SEO
 upgrade.seo.4,Corporate Espionage
+upgrade.seo.5,
+upgrade.seo.6,
+upgrade.seo.7,
+upgrade.seo.8,
+upgrade.seo.9,
 upgrade.blog,Blog
+upgrade.blog,Drive users to the platform and get a small satisfaction boost.
 upgrade.blog.0,Personal Blog
 upgrade.blog.1,Developer Blog
 upgrade.blog.2,Micro-blogging
 upgrade.blog.3,Comments
+upgrade.blog.4,Intern Writer
+upgrade.blog.5,Writer Team
+upgrade.blog.6,News Reporter
+upgrade.blog.7,News Team
+upgrade.blog.8,24/7 Posting
+upgrade.blog.9,25/7 Posting
 ad.popup.0,Free Virus Scan!!!
 ad.popup.1,"Virus Detected!
 Click Now To Scan"

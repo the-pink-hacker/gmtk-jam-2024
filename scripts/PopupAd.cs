@@ -6,7 +6,7 @@ public partial class PopupAd : Window
     [Export]
     private Vector2I PopupSize;
     
-    private const uint TEXT_VARIANTS = 6;
+    private const uint TEXT_VARIANTS = 5;
     private const int MARGIN = 32;
     
     [Export]
@@ -21,7 +21,7 @@ public partial class PopupAd : Window
             PopupSize.X,
             PopupSize.Y
         ));
-        uint variant = RandomNumber(TEXT_VARIANTS - 1);
+        uint variant = RandomNumber(TEXT_VARIANTS);
         string translationKey = $"ad.popup.{variant}";
         this.AdLabel.SetText(translationKey);
     }

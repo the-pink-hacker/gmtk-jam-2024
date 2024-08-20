@@ -15,7 +15,7 @@ size_flags_vertical = 3
 
 [node name="Upgrades" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 
 [node name="StoreBuyButton4" parent="HBoxContainer/Upgrades" node_paths=PackedStringArray("Preview") instance=ExtResource("1_quti7")]
 layout_mode = 2
@@ -54,7 +54,7 @@ Description
 
 [node name="Stats" parent="HBoxContainer" instance=ExtResource("2_7biek")]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 
 [node name="UpgradeProgress" parent="." instance=ExtResource("3_34xn0")]
 layout_mode = 2
